@@ -1,2 +1,2 @@
-# HalosUnhooker
-HalosUnhooker is a NT API Unhooker that uses Halo's Gate technique to get the original syscall ID of a hooked NT API which will be used to restore the NT API stub.
+# HalosUnhooker 
+HalosUnhooker is an unhooker that will help you to remove AVs/EDRs hooks from NT API. Whats special about HalosUnhooker is that it uses Halo's Gate technique to get the original syscall ID of a hooked NT API which will be used to restore the NT API stub, effectively removing the hooks. Because HalosUnhooker uses Halo's Gate technique to get the original syscall ID, it doesnt touch anything from disk. The only way to break HalosUnhooker is to modify the NTDLL using [SyscallShuffler](https://github.com/GetRektBoy724/SyscallShuffler) since Halo's Gate technique relies on sorting/walking through the neighbouring syscall stubs, if the syscall stubs are shuffled, it cant get the correct syscall ID.
